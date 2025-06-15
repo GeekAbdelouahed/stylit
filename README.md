@@ -5,8 +5,33 @@ A Flutter package that allows you to effortlessly turn a plain string into a bea
 Example:
 
 ```dart
-const String text = '<span>Flutter</span> <span>everything</span> is a <span>Widget</span>';
+final Widget stylitText = StylitText(
+  '<span>Flutter</span> <span>everything</span> is a <span>Widget</span>',
+  customStyles: [
+    TextStyle(
+      color: Colors.blue,
+      fontSize: 28,
+      fontWeight: FontWeight.bold,
+    ),
+    TextStyle(
+      color: Colors.pinkAccent,
+      fontSize: 16,
+      decoration: TextDecoration.underline,
+      decorationColor: Colors.red,
+      decorationStyle: TextDecorationStyle.double,
+    ),
+    TextStyle(
+      color: Colors.lightBlueAccent,
+      fontSize: 20,
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.bold,
+    ),
+  ],
+);
+
+const String text = '<p>Flutter</p> <p>everything</p> is a <p>Widget</p>';
 final Widget textWidget = text.stylit(
+  tag: 'p',
   styles: [
     TextStyle(
       color: Colors.blue,
